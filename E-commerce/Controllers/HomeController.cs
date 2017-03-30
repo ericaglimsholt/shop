@@ -14,6 +14,7 @@ namespace E_commerce.Controllers
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
+        [HttpGet]
         public ActionResult Index()
         {
             List<ProductsViewModel> product;
@@ -27,9 +28,8 @@ namespace E_commerce.Controllers
 
         public ActionResult Cart()
         {
-            ViewBag.Message = "Your cart.";
-
             return View();
         }
-    }
+
+     }
 }

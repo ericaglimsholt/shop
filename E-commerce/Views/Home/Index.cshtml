@@ -12,7 +12,16 @@
             <img style="width: 100%; height: auto;" class="img-fluid" src="@Url.Content("~/Content/img/" + product.ImgPath)" alt="@product.VideoTitle" /> <br />
             <h4>@(product.VideoTitle)</h4> 
             <p> @product.VideoPrice $</p> 
-            <button type="button" class="btn btn-primary">Add to cart</button>
+            
+
+            @using (Html.BeginForm("AddToCart", "Home"))
+            {
+                <input type="hidden" name="productId" value="@(product.VideoId)" />
+                <input type="hidden" name="orderQty" value="1" />
+                <button type="button" class="btn btn-primary">Add to cart</button>
+                //<input type="Submit" value="Add to Cart" />
+            }
+
         </div>
     }
 </div>
