@@ -1,0 +1,18 @@
+﻿@model List<E_commerce.Models.ProductsViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+ @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <h1></h1>
+            <img style="width: 100%; height: auto;" class="img-fluid" src="@Url.Content("~/Content/img/" + product.ImgPath)" alt="@product.VideoTitle" /> <br />
+            <h4>@(product.VideoTitle)</h4> 
+            <p> @product.VideoPrice $</p> 
+            <button type="button" class="btn btn-primary">Add to cart</button>
+        </div>
+    }
+</div>
