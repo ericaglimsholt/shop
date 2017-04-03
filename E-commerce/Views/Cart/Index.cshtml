@@ -1,9 +1,23 @@
-﻿@model List<E_commerce.Models.ProductsViewModel>
+﻿@model List<E_commerce.Models.CartViewModel>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Cart</h2>
+    <h2>Your Cart</h2>
+    <hr />
+
+
+    @foreach (var product in Model)
+    {
+        <h4>@(product.ProductTitle)</h4>
+            <p> @product.ProductPrice $</p>
+            <hr />
+    }
+
+    <h4>Total: @Model.Sum(x => x.ProductPrice)$</h4>
+    <button class="btn btn-secondary">@Html.ActionLink("Proceed to checkout", "Index", "Checkout")</button>
+
+
 

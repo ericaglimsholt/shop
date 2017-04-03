@@ -1,0 +1,53 @@
+﻿@model List<E_commerce.Models.CheckoutViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Checkout</h2>
+<p>To complete your order we need your contact information.</p>
+
+@using (Html.BeginForm("SaveOrder", "Checkout"))
+{ 
+    <div>
+        <label for="firstName">First Name: </label><br />
+        <input class="form-control" type="text" name="firstName" required />
+    </div>
+    <br />
+    <div>
+        <label for="lastName">Last Name: </label><br />
+        <input class="form-control" type="text" name="lastName" required />
+    </div>
+    <br />
+    <div>
+        <label for="email">Email: </label><br />
+        <input class="form-control"  type="text" name="email" required />
+    </div>
+    <br />
+    <div>
+        <label for="phone">Phone: </label><br />
+        <input class="form-control" type="text" name="phone" required />
+    </div>
+    <br />
+    <div>
+        <label for="street">Street: </label><br />
+        <input class="form-control" type="text" name="street" required />
+    </div>
+    <br />
+    <div>
+        <label for="postalCode">Postal Code: </label><br />
+        <input class="form-control" type="text" name="postalCode" required />
+    </div>
+    <br />
+    <div>
+        <label for="city">City: </label><br />
+        <input class="form-control" type="text" name="city" required />
+    </div>
+    <br />
+    <input class="btn btn-secondary" type="Submit" value="Place Order" />
+}
+
+
+
+

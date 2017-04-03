@@ -7,7 +7,7 @@ namespace E_commerce.Models
 {
     public class ProductsViewModel
     {
-        public string VideoId { set; get; }
+        public string Id { set; get; }
         public string VideoTitle { set; get; }
         public int VideoPrice { set; get; }
         public string ImgPath { set; get; }
